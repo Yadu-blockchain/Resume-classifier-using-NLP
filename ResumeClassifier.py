@@ -6,7 +6,7 @@ import os
 import pytesseract  # OCR tool for extracting text from images
 from PIL import Image  # Python Imaging Library for image processing
 
-# Set the path to the Tesseract executable (required for Windows)
+# Set the path to the Tesseract executable (required for Windows) in your PC
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 # Function to extract text from a JSON file
@@ -74,6 +74,7 @@ def log_prediction(file_path, predicted_category, log_file='resume_logs.csv'):
 
 # Load the resume dataset
 import pandas as pd
+# Provide the path where master data is saved in your personal computer
 df = pd.read_csv("C:\\Users\\user\\Desktop\\Jupyter\\Projects\\Resume dataset\\UpdatedResumeDataSet.csv")
 
 # Function to clean raw resume text
@@ -112,6 +113,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(requiredtext, df['Category'], test_size=0.2, random_state=42)
 
 # Path to the user's resume
+# Provide the path where the resume data file is saved in your personal computer
 resume_path = "C:\\Users\\user\\Desktop\\Jupyter\\Projects\\Resume dataset\\resume sample2.png"
 my_resume = load_resume(resume_path)
 
